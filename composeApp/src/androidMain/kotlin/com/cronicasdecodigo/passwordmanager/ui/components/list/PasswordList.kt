@@ -1,6 +1,5 @@
 package com.cronicasdecodigo.passwordmanager.ui.components.list
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -8,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
@@ -15,10 +15,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.cronicasdecodigo.passwordmanager.R
+import coil.compose.AsyncImage
+import coil.decode.SvgDecoder
+import coil.request.ImageRequest
 import com.cronicasdecodigo.passwordmanager.shared.data.password.model.Password
 
 @Composable
@@ -51,9 +53,16 @@ fun PasswordItem(
             .padding(8.dp)
             .height(60.dp)
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.ic_launcher_foreground),
-            contentDescription = password.title
+        AsyncImage(
+            model = ImageRequest.Builder(LocalContext.current)
+                .data(password.appLogo)
+                .decoderFactory(SvgDecoder.Factory())
+                .build(),
+            contentDescription = null,
+            modifier = Modifier
+                .width(48.dp)
+                .height(48.dp)
+                .padding(end = 8.dp)
         )
         Column {
             Text(text = password.title, style = MaterialTheme.typography.subtitle1)
@@ -78,7 +87,8 @@ fun PasswordListPreview() {
                 title = "GitHub",
                 username = "cggomes",
                 password = "123456",
-                url = "https://github.com"
+                url = "https://github.com",
+                appLogo = "https://raw.githubusercontent.com/rdimascio/icons/master/icons/github.svg"
             )
         ),
         onPasswordSelected = { println("Password selected $it") }

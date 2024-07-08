@@ -9,6 +9,7 @@ interface PasswordRepository {
         username: String,
         password: String,
         url: String,
+        appLogo: String,
     )
 
     fun getPassword(id: Int): Password?

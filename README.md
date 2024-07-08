@@ -16,3 +16,6 @@
 
 ## Third round
 - [ ] Details screen
+
+# Special Thanks
+- @rdimascio for the [icons](https://github.com/rdimascio/icons) repository.

@@ -11,7 +11,8 @@ class PasswordMemoryRepository : PasswordRepository {
             title = "GitHub",
             username = "cggomes",
             password = "12345",
-            url = "https://github.com/cggomes"
+            url = "https://github.com",
+            appLogo = "https://raw.githubusercontent.com/rdimascio/icons/master/icons/github.svg"
         )
     )
 
@@ -20,7 +21,8 @@ class PasswordMemoryRepository : PasswordRepository {
         title: String,
         username: String,
         password: String,
-        url: String
+        url: String,
+        appLogo: String,
     ) {
         val passwordData = Password(
             id = id,
@@ -28,6 +30,7 @@ class PasswordMemoryRepository : PasswordRepository {
             username = username,
             password = password,
             url = url,
+            appLogo = appLogo
         )
         passwords.add(passwordData)
     }

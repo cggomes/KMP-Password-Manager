@@ -6,4 +6,5 @@ data class Password(
     val username: String,
     val password: String,
     val url: String,
+    val appLogo: String,
 )

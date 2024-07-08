@@ -12,20 +12,33 @@ class PasswordMemoryRepositoryTest : FreeSpec ({
         passwordRepository = PasswordMemoryRepository()
     }
 
-    "should save title, password, username and url" - {
-        passwordRepository.savePassword(
-            id = 1,
-            title = "GitHub",
-            username = "cggomes",
-            password = "password",
-            url = "https://github.com",
-        )
+    "should retrieve default password with correct title, password, username, url and appLogo" - {
         val passwordData = passwordRepository.getPassword(1)
         passwordData shouldNotBe null
         passwordData?.id shouldBe 1
         passwordData?.title shouldBe "GitHub"
         passwordData?.username shouldBe "cggomes"
-        passwordData?.password shouldBe "password"
+        passwordData?.password shouldBe "12345"
         passwordData?.url shouldBe "https://github.com"
+        passwordData?.appLogo shouldBe "https://raw.githubusercontent.com/rdimascio/icons/master/icons/github.svg"
+    }
+
+    "should save new password with title, password, username, url and appLogo" - {
+        passwordRepository.savePassword(
+            id = 999,
+            title = "Google",
+            username = "christian",
+            password = "password",
+            url = "https://google.com",
+            appLogo = "https://raw.githubusercontent.com/rdimascio/icons/master/icons/google.svg"
+        )
+        val passwordData = passwordRepository.getPassword(999)
+        passwordData shouldNotBe null
+        passwordData?.id shouldBe 999
+        passwordData?.title shouldBe "Google"
+        passwordData?.username shouldBe "christian"
+        passwordData?.password shouldBe "password"
+        passwordData?.url shouldBe "https://google.com"
+        passwordData?.appLogo shouldBe "https://raw.githubusercontent.com/rdimascio/icons/master/icons/google.svg"
     }
 })
