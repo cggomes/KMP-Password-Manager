@@ -4,7 +4,7 @@
 
 # TODO
 ## First round
-- [ ] Add website/app logo
+- [x] Add website/app logo
 - [ ] Create new password
 - [ ] Search passwords
 - [ ] Delete password (Swipe action)
