@@ -13,6 +13,9 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		AA46D3092C360E7E0084291C /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46D3082C360E7E0084291C /* PasswordView.swift */; };
 		AA5CEC4A2C3C98870058668C /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5CEC492C3C98870058668C /* PasswordViewModel.swift */; };
+		AA5CEC4D2C3CA8040058668C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA5CEC4C2C3CA8040058668C /* SDWebImageSwiftUI */; };
+		AA5CEC502C3CA9880058668C /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = AA5CEC4F2C3CA9880058668C /* SDWebImageSVGCoder */; };
+		AA5CEC522C3CAAC40058668C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5CEC512C3CAAC40058668C /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA46D3082C360E7E0084291C /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		AA5CEC492C3C98870058668C /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
+		AA5CEC512C3CAAC40058668C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB3632DC29227652001CCB65 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA5CEC4D2C3CA8040058668C /* SDWebImageSwiftUI in Frameworks */,
+				AA5CEC502C3CA9880058668C /* SDWebImageSVGCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +86,7 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				AA5CEC512C3CAAC40058668C /* AppDelegate.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -127,6 +134,8 @@
 			);
 			name = iosApp;
 			packageProductDependencies = (
+				AA5CEC4C2C3CA8040058668C /* SDWebImageSwiftUI */,
+				AA5CEC4F2C3CA9880058668C /* SDWebImageSVGCoder */,
 			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* Password Manager.app */;
@@ -158,6 +167,8 @@
 			);
 			mainGroup = 7555FF72242A565900829871;
 			packageReferences = (
+				AA5CEC4B2C3CA8040058668C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				AA5CEC4E2C3CA9880058668C /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
 			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
@@ -210,6 +221,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				AA46D3092C360E7E0084291C /* PasswordView.swift in Sources */,
 				AA5CEC4A2C3C98870058668C /* PasswordViewModel.swift in Sources */,
+				AA5CEC522C3CAAC40058668C /* AppDelegate.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +435,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA5CEC4B2C3CA8040058668C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.1;
+			};
+		};
+		AA5CEC4E2C3CA9880058668C /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder";
+			requirement = {
+				kind = exactVersion;
+				version = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA5CEC4C2C3CA8040058668C /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA5CEC4B2C3CA8040058668C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		AA5CEC4F2C3CA9880058668C /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA5CEC4E2C3CA9880058668C /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }

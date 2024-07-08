@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PasswordView: View {
     
@@ -41,11 +42,14 @@ struct PasswordView: View {
         LazyVStack {
             ForEach(passwordViewModel.getPasswords(), id: \.self) { password in
                 HStack(spacing: 0) {
-                    Image(systemName: "swift")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 48)
-                        .padding(.trailing, 8)
+                    WebImage(
+                        url: URL(string: password.appLogo)
+                    ) { result in
+                        result.image?.resizable()
+                    }
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 48, height: 48)
+                    .padding(.trailing, 8)
                     VStack(alignment: .leading, spacing: 0) {
                         Text(password.title)
                             .bold()
