@@ -19,12 +19,15 @@ import com.cronicasdecodigo.passwordmanager.shared.data.password.memory.Password
 import com.cronicasdecodigo.passwordmanager.ui.components.list.PasswordList
 
 @Composable
-fun PasswordScreen(passwordViewModel: PasswordViewModel) {
+fun PasswordScreen(
+    passwordViewModel: PasswordViewModel,
+    onNavigateToCreate: () -> Unit,
+) {
     Column(
         modifier = Modifier
             .padding(8.dp)
     ) {
-        IconButton(onClick = {}) {
+        IconButton(onClick = { onNavigateToCreate() }) {
             Icon(
                 imageVector = Icons.Outlined.AddCircle,
                 contentDescription = stringResource(R.string.add_new_password_item),
@@ -46,5 +49,5 @@ fun PasswordScreen(passwordViewModel: PasswordViewModel) {
 @Composable
 fun PasswordScreenPreview() {
     val passwordViewModel = PasswordViewModel(PasswordMemoryRepository())
-    PasswordScreen(passwordViewModel = passwordViewModel)
+    PasswordScreen(passwordViewModel = passwordViewModel) {}
 }

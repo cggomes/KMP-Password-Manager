@@ -5,7 +5,7 @@ import com.cronicasdecodigo.passwordmanager.shared.data.password.model.Password
 
 class PasswordMemoryRepository : PasswordRepository {
 
-    private val passwords = mutableListOf<Password>(
+    private val passwords = mutableListOf(
         Password(
             id = 1,
             title = "GitHub",
@@ -17,13 +17,13 @@ class PasswordMemoryRepository : PasswordRepository {
     )
 
     override fun savePassword(
-        id: Int,
         title: String,
         username: String,
         password: String,
         url: String,
         appLogo: String,
     ) {
+        val id = passwords.last().id + 1
         val passwordData = Password(
             id = id,
             title = title,

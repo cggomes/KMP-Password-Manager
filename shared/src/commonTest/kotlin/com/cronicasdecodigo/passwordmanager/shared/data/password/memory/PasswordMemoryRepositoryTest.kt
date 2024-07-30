@@ -25,16 +25,15 @@ class PasswordMemoryRepositoryTest : FreeSpec ({
 
     "should save new password with title, password, username, url and appLogo" - {
         passwordRepository.savePassword(
-            id = 999,
             title = "Google",
             username = "christian",
             password = "password",
             url = "https://google.com",
             appLogo = "https://raw.githubusercontent.com/rdimascio/icons/master/icons/google.svg"
         )
-        val passwordData = passwordRepository.getPassword(999)
+        val passwordData = passwordRepository.getPassword(2)
         passwordData shouldNotBe null
-        passwordData?.id shouldBe 999
+        passwordData?.id shouldBe 2
         passwordData?.title shouldBe "Google"
         passwordData?.username shouldBe "christian"
         passwordData?.password shouldBe "password"
