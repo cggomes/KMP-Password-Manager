@@ -2,9 +2,15 @@ import SwiftUI
 import Shared
 
 struct ContentView: View {
-    @State private var showContent = false
+    
+    let passwordViewModel = PasswordViewModel()
+
     var body: some View {
-        PasswordView()
+        NavigationView {
+            PasswordView()
+                .navigationTitle("Password")
+        }
+        .environmentObject(passwordViewModel)
     }
 }
 

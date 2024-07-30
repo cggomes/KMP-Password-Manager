@@ -11,12 +11,15 @@ import SDWebImageSwiftUI
 
 struct PasswordView: View {
     
-    let passwordViewModel = PasswordViewModel()
+    @EnvironmentObject var passwordViewModel: PasswordViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
-            plusButton
-            title
+            NavigationLink {
+                CreatePasswordView()
+            } label: {
+                plusButton
+            }
             passwordList
         }
         .frame(maxWidth: .infinity, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .top)
@@ -70,4 +73,5 @@ struct PasswordView: View {
 
 #Preview {
     PasswordView()
+        .environmentObject(PasswordViewModel())
 }

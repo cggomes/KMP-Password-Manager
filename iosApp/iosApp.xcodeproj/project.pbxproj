@@ -11,6 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		AA11C6E02C599DDD0032AAB9 /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11C6DF2C599DDD0032AAB9 /* CreatePasswordView.swift */; };
 		AA46D3092C360E7E0084291C /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46D3082C360E7E0084291C /* PasswordView.swift */; };
 		AA5CEC4A2C3C98870058668C /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5CEC492C3C98870058668C /* PasswordViewModel.swift */; };
 		AA5CEC4D2C3CA8040058668C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA5CEC4C2C3CA8040058668C /* SDWebImageSwiftUI */; };
@@ -25,6 +26,7 @@
 		7555FF7B242A565900829871 /* Password Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA11C6DF2C599DDD0032AAB9 /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		AA46D3082C360E7E0084291C /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		AA5CEC492C3C98870058668C /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		AA5CEC512C3CAAC40058668C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 			path = iosApp;
 			sourceTree = "<group>";
 		};
+		AA11C6DE2C599DC90032AAB9 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				AA11C6DF2C599DDD0032AAB9 /* CreatePasswordView.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
 		AA46D3062C360E5A0084291C /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 		AA46D3072C360E610084291C /* Password */ = {
 			isa = PBXGroup;
 			children = (
+				AA11C6DE2C599DC90032AAB9 /* Create */,
 				AA46D3082C360E7E0084291C /* PasswordView.swift */,
 				AA5CEC492C3C98870058668C /* PasswordViewModel.swift */,
 			);
@@ -221,6 +232,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				AA46D3092C360E7E0084291C /* PasswordView.swift in Sources */,
 				AA5CEC4A2C3C98870058668C /* PasswordViewModel.swift in Sources */,
+				AA11C6E02C599DDD0032AAB9 /* CreatePasswordView.swift in Sources */,
 				AA5CEC522C3CAAC40058668C /* AppDelegate.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
