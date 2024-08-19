@@ -45,14 +45,22 @@ struct PasswordView: View {
         LazyVStack {
             ForEach(passwordViewModel.getPasswords(), id: \.self) { password in
                 HStack(spacing: 0) {
-                    WebImage(
-                        url: URL(string: password.appLogo)
-                    ) { result in
-                        result.image?.resizable()
+                    if password.appLogo.isEmpty {
+                        Image(systemName: "key")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 48, height: 48)
+                            .padding(.trailing, 8)
+                    } else {
+                        WebImage(
+                            url: URL(string: password.appLogo)
+                        ) { result in
+                            result.image?.resizable()
+                        }
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 48, height: 48)
+                        .padding(.trailing, 8)
                     }
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 48, height: 48)
-                    .padding(.trailing, 8)
                     VStack(alignment: .leading, spacing: 0) {
                         Text(password.title)
                             .bold()

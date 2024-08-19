@@ -87,10 +87,7 @@ fun CreatePasswordScreen(
         Spacer(modifier = Modifier.weight(1f))
         Row {
             Button(
-                onClick = {
-                    viewModel.savePassword()
-                    onSavePassword()
-                },
+                onClick = { onSavePassword() },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(text = stringResource(R.string.save))

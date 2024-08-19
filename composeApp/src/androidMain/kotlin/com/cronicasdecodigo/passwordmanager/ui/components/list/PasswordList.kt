@@ -10,17 +10,20 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.decode.SvgDecoder
 import coil.request.ImageRequest
+import com.cronicasdecodigo.passwordmanager.R
 import com.cronicasdecodigo.passwordmanager.shared.data.password.model.Password
 
 @Composable
@@ -53,17 +56,28 @@ fun PasswordItem(
             .padding(8.dp)
             .height(60.dp)
     ) {
-        AsyncImage(
-            model = ImageRequest.Builder(LocalContext.current)
-                .data(password.appLogo)
-                .decoderFactory(SvgDecoder.Factory())
-                .build(),
-            contentDescription = null,
-            modifier = Modifier
-                .width(48.dp)
-                .height(48.dp)
-                .padding(end = 8.dp)
-        )
+        if (password.appLogo.isNotBlank()) {
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(password.appLogo)
+                    .decoderFactory(SvgDecoder.Factory())
+                    .build(),
+                contentDescription = null,
+                modifier = Modifier
+                    .width(48.dp)
+                    .height(48.dp)
+                    .padding(end = 8.dp)
+            )
+        } else {
+            Icon(
+                painter = painterResource(id = R.drawable.ic_key),
+                contentDescription = null,
+                modifier = Modifier
+                    .width(48.dp)
+                    .height(48.dp)
+                    .padding(end = 8.dp)
+            )
+        }
         Column {
             Text(text = password.title, style = MaterialTheme.typography.subtitle1)
             Text(text = password.username, style = MaterialTheme.typography.caption)

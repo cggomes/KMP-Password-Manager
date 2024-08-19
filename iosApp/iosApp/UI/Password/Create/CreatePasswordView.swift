@@ -27,7 +27,7 @@ struct CreatePasswordView: View {
                 
                 Section {
                     Button("Save") {
-                        passwordViewModel.savePassword()
+                        passwordViewModel.onSave()
                         dismiss()
                     }
                 }

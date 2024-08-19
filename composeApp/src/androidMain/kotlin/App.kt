@@ -27,7 +27,10 @@ fun App() {
                 CreatePasswordScreen(
                     viewModel = passwordViewModel,
                     onNavigateBack = { navController.navigateUp() },
-                    onSavePassword = { navController.navigateUp() }
+                    onSavePassword = {
+                        passwordViewModel.onSave()
+                        navController.navigateUp()
+                    }
                 )
             }
         }

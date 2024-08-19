@@ -23,6 +23,11 @@ class PasswordViewModel: ObservableObject {
         return passwordRepository.getPasswords()
     }
     
+    func onSave() {
+        savePassword()
+        resetFields()
+    }
+    
     func savePassword() {
         passwordRepository.savePassword(
             title: title,
@@ -31,7 +36,6 @@ class PasswordViewModel: ObservableObject {
             url: url,
             appLogo: appLogo
         )
-        resetFields()
     }
     
     func resetFields() {

@@ -61,6 +61,11 @@ class PasswordViewModel(
         )
     }
 
+    fun onSave() {
+        savePassword()
+        resetPasswordFields()
+    }
+
     fun savePassword() {
         val password = _uiState.value.password
         passwordRepository.savePassword(
@@ -70,10 +75,9 @@ class PasswordViewModel(
             url = password.url,
             appLogo = password.appLogo
         )
-        resetPasswordFields()
     }
 
-    private fun resetPasswordFields() {
+    fun resetPasswordFields() {
         _uiState.value = PasswordState()
     }
 

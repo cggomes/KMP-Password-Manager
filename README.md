@@ -8,6 +8,8 @@
 - [ ] Create new password
 - [ ] Search passwords
 - [ ] Delete password (Swipe action)
+- [ ] Move cursor to next field
+- [ ] Change password field to show/hide password
 - [ ] UI Tests for Android
 - [ ] UI Tests for iOS
 
