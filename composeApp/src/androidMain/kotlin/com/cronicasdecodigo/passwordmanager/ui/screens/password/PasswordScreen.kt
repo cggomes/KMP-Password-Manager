@@ -1,6 +1,7 @@
 package com.cronicasdecodigo.passwordmanager.ui.screens.password
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -44,7 +45,8 @@ fun PasswordScreen(
         )
         TextField(
             value = state.searchTerm,
-            onValueChange = { passwordViewModel.onSearchTermChange(it) }
+            onValueChange = { passwordViewModel.onSearchTermChange(it) },
+            modifier = Modifier.fillMaxWidth()
         )
         PasswordList(
             passwords = state.passwords,
