@@ -10,10 +10,12 @@
 - [ ] Delete password (Swipe action)
 - [ ] Move cursor to next field
 - [ ] Change password field to show/hide password
+- [ ] Move search logic to KMP
 - [ ] UI Tests for Android
 - [ ] UI Tests for iOS
 
 ## Second round
+- [ ] Improve UI colors, paddings and theming
 - [ ] Persist passwords
 - [ ] Details screen
 - [ ] Validate "Create Password" fields

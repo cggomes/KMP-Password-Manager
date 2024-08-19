@@ -6,9 +6,12 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AddCircle
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -23,6 +26,7 @@ fun PasswordScreen(
     passwordViewModel: PasswordViewModel,
     onNavigateToCreate: () -> Unit,
 ) {
+    val state by passwordViewModel.uiState.collectAsState()
     Column(
         modifier = Modifier
             .padding(8.dp)
@@ -38,8 +42,12 @@ fun PasswordScreen(
             style = MaterialTheme.typography.h4,
             fontWeight = FontWeight.Bold
         )
+        TextField(
+            value = state.searchTerm,
+            onValueChange = { passwordViewModel.onSearchTermChange(it) }
+        )
         PasswordList(
-            passwords = passwordViewModel.getPasswords(),
+            passwords = state.passwords,
             onPasswordSelected = {}
         )
     }
