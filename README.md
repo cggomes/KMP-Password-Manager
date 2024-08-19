@@ -6,13 +6,13 @@
 ## First round
 - [x] Add website/app logo
 - [x] Create new password
-- [ ] Search passwords
+- [x] Search passwords
 - [ ] Delete password (Swipe action)
-- [ ] Move cursor to next field
-- [ ] Change password field to show/hide password
-- [ ] Move search logic to KMP
 - [ ] UI Tests for Android
 - [ ] UI Tests for iOS
+- [ ] Move search logic to KMP
+- [ ] Change password field to show/hide password
+- [ ] Move cursor to next field
 
 ## Second round
 - [ ] Improve UI colors, paddings and theming
