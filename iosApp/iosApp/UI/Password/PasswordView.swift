@@ -20,6 +20,7 @@ struct PasswordView: View {
             } label: {
                 plusButton
             }
+            searchField
             passwordList
         }
         .frame(maxWidth: .infinity, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .top)
@@ -35,15 +36,13 @@ struct PasswordView: View {
             .padding(.bottom, 8)
     }
     
-    var title: some View {
-        Text("Password")
-            .font(.largeTitle)
-            .bold()
+    var searchField: some View {
+        TextField("Search Password", text: $passwordViewModel.searchTerm)
     }
     
     var passwordList: some View {
         LazyVStack {
-            ForEach(passwordViewModel.getPasswords(), id: \.self) { password in
+            ForEach(passwordViewModel.passwords, id: \.self) { password in
                 HStack(spacing: 0) {
                     if password.appLogo.isEmpty {
                         Image(systemName: "key")

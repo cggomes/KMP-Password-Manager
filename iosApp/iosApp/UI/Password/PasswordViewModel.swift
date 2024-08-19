@@ -11,24 +11,47 @@ import Shared
 
 class PasswordViewModel: ObservableObject {
     
+    @Published var passwords: [Password] = []
     @Published var title: String = ""
     @Published var username: String = ""
     @Published var password: String = ""
     @Published var url: String = ""
     @Published var appLogo: String = ""
-    
+    @Published var searchTerm: String = "" {
+        didSet(oldValue) {
+            if (searchTerm != oldValue) {
+                filterPasswordList()
+            }
+        }
+    }
+
     private let passwordRepository: PasswordRepository = PasswordMemoryRepository()
+    
+    init() {
+        updatePasswordList()
+    }
+    
+    func updatePasswordList() {
+        self.passwords = getPasswords()
+    }
 
     func getPasswords() -> [Password] {
         return passwordRepository.getPasswords()
     }
     
+    private func filterPasswordList() {
+        self.passwords = getPasswords().filter{ password in
+            searchTerm.isEmpty || password.title.lowercased().contains(searchTerm.lowercased())
+        }
+    }
+    
     func onSave() {
         savePassword()
         resetFields()
+        updatePasswordList()
     }
     
-    func savePassword() {
+    private func savePassword() {
         passwordRepository.savePassword(
             title: title,
             username: username,
@@ -38,7 +61,7 @@ class PasswordViewModel: ObservableObject {
         )
     }
     
-    func resetFields() {
+    private func resetFields() {
         title = ""
         username = ""
         password = ""
