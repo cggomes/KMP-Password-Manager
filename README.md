@@ -5,7 +5,7 @@
 # TODO
 ## First round
 - [x] Add website/app logo
-- [ ] Create new password
+- [x] Create new password
 - [ ] Search passwords
 - [ ] Delete password (Swipe action)
 - [ ] Move cursor to next field
@@ -15,9 +15,8 @@
 
 ## Second round
 - [ ] Persist passwords
-
-## Third round
 - [ ] Details screen
+- [ ] Validate "Create Password" fields
 
 # Special Thanks
 - @rdimascio for the [icons](https://github.com/rdimascio/icons) repository.
