@@ -45,6 +45,7 @@ fun PasswordScreen(
         )
         TextField(
             value = state.searchTerm,
+            placeholder = { Text(stringResource(R.string.search_password)) },
             onValueChange = { passwordViewModel.onSearchTermChange(it) },
             modifier = Modifier.fillMaxWidth()
         )
